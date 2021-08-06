@@ -1,0 +1,293 @@
+/*custom font*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+.loading-overlay{display:table;opacity:.7}.loading-overlay-content{text-transform:uppercase;letter-spacing:.4em;font-size:1.15em;font-weight:700;text-align:center;display:table-cell;vertical-align:middle}.loading-overlay.loading-theme-light{background-color:#fff;color:#000}.loading-overlay.loading-theme-dark{background-color:#000;color:#fff}
+
+/*basic reset*/
+* {margin: 0; padding: 0;}
+
+html {
+	height: 100%;
+	/*Image only BG fallback*/
+
+	/*background = gradient + image pattern combo*/
+	background: #1d1d1d;
+		/*linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));*/
+}
+
+body {
+	font-family: montserrat, arial, verdana;
+	padding-bottom: 2rem;
+}
+
+.logo {
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+}
+
+.logo img {
+	width: 350px;
+	display: block;
+	margin: 0 auto;
+}
+
+.no-number::-webkit-outer-spin-button,
+.no-number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.fs-warning {
+	text-transform: uppercase;
+	color: red;
+	font-size: 1.8rem;
+}
+
+.warning {
+	border: 1px solid red !important;
+}
+
+.required {
+	color: red;
+	font-weight: 700;
+	font-size: 1.4rem;
+}
+
+input[type=text]:focus, input[type=email]:focus, input[type=number]:focus,
+input[type=date]:focus, select:focus {
+	outline: 0;
+	border: 1px solid #1d1d1d !important;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+.hide {
+	display: none;
+}
+
+/*form styles*/
+#msform {
+	max-width: 60%;
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
+}
+
+.form-container {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
+.container-full {
+	flex-direction: column;
+}
+
+.form-item {
+	width: 50%;
+	margin-right: 1rem;
+	margin-top: .5rem;
+}
+
+.item-inline {
+	display: flex;
+}
+
+.item-full {
+	width: 100%;
+}
+
+#msform label {
+	text-align: left;
+	display: block;
+	margin-bottom: .2rem;
+}
+
+#msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	min-height: 400px;
+	/*stacking fieldsets above each other*/
+	position: relative;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+/*inputs*/
+#msform input, #msform textarea, #msform select {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+}
+
+.radio {
+	width: 13px !important;
+	margin-left: 1rem;
+	margin-right: .2rem;
+}
+
+.radio:first-child {
+	margin-left: 0px;
+}
+/*buttons*/
+.action-button {
+	width: 120px !important;
+	background: rgb(255, 208, 0);
+	font-weight: bold;
+	color: rgb(161, 133, 0);
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+	font-size: 1.2rem;
+}
+
+.action-button:hover, .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px rgb(161, 133, 0);
+	outline:0;
+}
+/*headings*/
+.fs-title {
+	font-size: 1.8rem;
+	text-transform: uppercase;
+	color: #2C3E50;
+	margin-bottom: 10px;
+}
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 1.6rem;
+	color: #666;
+	margin-bottom: 20px;
+}
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	display: flex;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 33.33%;
+	/*position: relative;*/
+	margin:0 auto;
+}
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none;
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: rgb(255, 208, 0);
+	color: black;
+}
+
+
+/* PRE FORM */
+.pre_postulacion, .postulacion {
+	background-color: white;
+	color: black;
+	max-width: 40%;
+	margin: 0 auto;
+	padding:2rem;
+	border-radius: 5px;
+}
+
+.pre_postulacion h2, .postulacion h2 {
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 1rem;
+}
+
+.pre_postulacion p, .postulacion p {
+	line-height: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+.pre_postulacion button, .postulacion button {
+	display: block;
+	margin: 0 auto;
+}
+
+.emoticones {
+	text-align: center;
+	font-size: 1.5rem;
+	margin-top: 1rem;
+	color:white;
+}
+
+.instagram{
+	font-size: 1.1rem;
+	color: white;
+	text-align: center;
+	margin-top: 1rem;
+}
+
+.fab {
+	vertical-align: middle;
+}
+
+
+@media (max-width: 600px) {
+	#msform {
+		max-width: 95%;
+	}
+
+	#msform fieldset {
+		margin: 0 auto;
+	}
+
+	.form-container {
+		flex-direction: column;
+	}
+  .form-item {
+		width: 100%;
+	}
+	.pre_postulacion {
+		max-width: 70%;
+	}
+}

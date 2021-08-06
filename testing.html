@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Postulación | Paseo78</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+
+  <div class="logo">
+    <img src="logo.png" alt="Logo Paseo78">
+  </div>
+
+  <!-- multistep form -->
+  <form id="msform" method="POST" action="api.php" enctype="multipart/form-data">
+    <ul id="progressbar">
+      <li class="active">Generales</li>
+      <li>Estudios</li>
+      <li>Carga Familiar</li>
+      <li>Documentos</li>
+    </ul>
+    <fieldset>
+      <h2 class="fs-title">Postulación a Grupo Paseo</h2>
+      <h3 class="fs-subtitle">Datos Generales</h3>
+      <h4 class="fs-warning"></h4>
+      <div class="form-container">
+        <div class="form-item">
+          <label for="nombre">Nombres y Apellidos <span class="required">*</span></label>
+          <input type="text" name="nombre" placeholder="Nombres y Apellidos"  required/>
+        </div>
+        <div class="form-item">
+          <label for="cedula">C.I. <span class="required">*</span></label>
+          <input type="text" name="cedula" placeholder="Ej: 28658985" id="cedula" required/>
+        </div>
+      </div>
+      <div class="form-container">
+        <div class="form-item">
+          <label for="rif">Registro de Información Fiscal <span class="required">*</span></label>
+          <input type="text" name="rif" placeholder="V263923470" id="rif" required/>
+        </div>
+        <div class="form-item">
+          <label for="sexo">Sexo <span class="required">*</span></label>
+          <select name="sexo" size="1">
+            <option value="masculino" selected>Masculino</option>
+            <option value="femenino">Femenino</option>
+    			</select>
+        </div>
+      </div>
+      <div class="form-container">
+        <div class="form-item">
+          <label for="nacimiento">Fecha de Nacimiento <span class="required">*</span></label>
+          <input name="nacimiento" type="text" class="datepicker" placeholder="Ej: 21/10/1998" required>
+        </div>
+        <div class="form-item">
+          <label for="estado_civil">Estado civil <span class="required">*</span></label>
+          <select name="estado_civil" size="1">
+            <option value="soltero" selected>Soltero</option>
+            <option value="casado">Casado</option>
+            <option value="divorciado">Divorciado</option>
+            <option value="viudo" >Viudo</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-container">
+        <div class="form-item">
+          <label for="estatura">Estatura (mts): <span class="required">*</span></label>
+          <input name="estatura" type="number" step="0.01" placeholder="Ej: 1.70" required/>
+        </div>
+        <div class="form-item">
+          <label for="peso">Peso (kgs): <span class="required">*</span></label>
+          <input name="peso" type="number" placeholder="Ej: 60" required/>
+        </div>
+      </div>
+      <hr>
+      <div class="form-container">
+        <div class="form-item">
+          <label for="estado">Estado: <span class="required">*</span></label>
+          <input name="estado" type="text" placeholder="Estado" required/>
+        </div>
+        <div class="form-item">
+          <label for="ciudad">Ciudad: <span class="required">*</span></label>
+          <input name="ciudad" type="text" placeholder="Ciudad" required/>
+        </div>
+      </div>
+      <div class="form-container">
+        <div class="form-item">
+          <label for="parroquia">Parroquia: <span class="required">*</span></label>
+          <input name="parroquia" type="text" placeholder="Parroquia" required/>
+        </div>
+        <div class="form-item">
+          <label for="personal">Teléfono personal: <span class="required">*</span></label>
+          <input class="no-number" name="personal" type="number" placeholder="Ej: 04241234567" required/>
+        </div>
+      </div>
+      <div class="form-container">
+        <div class="form-item">
+          <label for="hogar">Teléfono hogar: </label>
+          <input class="no-number" name="hogar" type="number" placeholder="Ej: 02411234567"/>
+        </div>
+        <div class="form-item">
+          <label for="email">Correo electrónico: <span class="required">*</span></label>
+          <input class="no-number" id="email" name="email" type="email" placeholder="Email" required/>
+        </div>
+      </div>
+      <div class="form-container">
+        <div class="form-item">
+          <label for="vivienda">Vivienda: <span class="required">*</span></label>
+          <select name="vivienda" size="1">
+            <option value="propia" selected>Propia</option>
+            <option value="alquilada">Alquilada</option>
+            <option value="familiar">De un familiar</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+        <div class="form-item">
+          <label for="nacionalidad">Nacionalidad: <span class="required">*</span></label>
+          <select name="nacionalidad" size="1">
+            <option value="V" selected>Venezolano</option>
+            <option value="E">Extranjero</option>
+          </select>
+        </div>
+      </div>
+      <input type="button" name="next" class="next action-button" value="Siguiente" />
+    </fieldset>
+    <fieldset>
+      <h2 class="fs-title">Postulación a Grupo Paseo</h2>
+      <h3 class="fs-subtitle">Datos de Estudios</h3>
+      <h4 class="fs-warning"></h4>
+      <div class="form-container container-full">
+        <div class="form-item item-inline">
+          <label for="universitario">¿Estudias en la universidad?</label>
+          <input class="radio" type="radio" name="universitario" value="si">Sí
+          <input class="radio" type="radio" name="universitario" value="no" checked>No
+        </div>
+      </div>
+      <div class="universidad-form hide">
+        <div class="form-container">
+          <div class="form-item">
+            <label for="universidad">Instituto / Universidad: <span class="required">*</span></label>
+            <input name="universidad" type="text" placeholder="Universidad"/>
+          </div>
+          <div class="form-item">
+            <label for="carrera">Carrera: <span class="required">*</span></label>
+            <input class="no-number" name="carrera" type="text" placeholder="Carrera"/>
+          </div>
+        </div>
+        <div class="form-container">
+          <div class="form-item">
+            <label for="ano-inicio">Año de inicio: <span class="required">*</span></label>
+            <input class="anos" name="ano-inicio" type="text" placeholder="Año de inicio"/>
+          </div>
+          <div class="form-item">
+            <label for="ano-fin">Año de cuminación previsto: <span class="required">*</span></label>
+            <input class="anos" name="ano-fin" type="text" placeholder="Año de culminación aproximado"/>
+          </div>
+        </div>
+        <div class="form-container">
+          <div class="form-item">
+            <label for="turno">Turno: <span class="required">*</span></label>
+            <select name="turno" size="1">
+              <option value="manana" selected>Mañana</option>
+              <option value="tarde">Tarde</option>
+              <option value="noche">Noche</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <input type="button" name="previous" class="previous action-button" value="Anterior" />
+      <input type="button" name="next" class="next action-button" value="Siguiente" />
+    </fieldset>
+    <fieldset>
+      <h2 class="fs-title">Postulación a Grupo Paseo</h2>
+      <h3 class="fs-subtitle">Carga familiar</h3>
+      <h4 class="fs-warning"></h4>
+
+      <!-- FORMULARIO COMPANERO -->
+      <div class="form-container container-full">
+        <div class="form-item item-inline">
+          <label for="companero">¿Compañero (a) / Esposo (a)?</label>
+          <input class="radio" type="radio" name="companero" value="si"> Sí
+          <input class="radio" type="radio" name="companero" value="no" checked> No
+        </div>
+      </div>
+      <div class="companero-form hide">
+        <div class="form-container">
+          <div class="form-item">
+            <label for="companero-nombre">Nombres y Apellidos: <span class="required">*</span></label>
+            <input name="companero-nombre" type="text" placeholder="Nombre de Compañero o Esposa"/>
+          </div>
+          <div class="form-item">
+            <label for="companero-cedula">Cédula de identidad: <span class="required">*</span></label>
+            <input class="no-number" name="companero-cedula" type="number" placeholder="Carrera"/>
+          </div>
+        </div>
+        <div class="form-container">
+          <div class="form-item">
+            <label for="companero-profesion">Profesión: <span class="required">*</span></label>
+            <input name="companero-profesion" type="text" placeholder="Profesión"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMULARIO HIJO -->
+      <div class="form-container container-full">
+        <div class="form-item item-inline">
+          <label for="hijo">¿Tiene hijos?</label>
+          <input class="radio" type="radio" name="hijo" value="si"> Sí
+          <input class="radio" type="radio" name="hijo" value="no" checked> No
+        </div>
+      </div>
+      <div class="hijo-form hide">
+        <div class="form-container">
+          <div class="form-item">
+            <label for="hijo-cantidad">¿Cuantos hijos tiene?: <span class="required">*</span></label>
+            <input id="hijo-cantidad" name="hijo-cantidad" type="number" placeholder="1" value="0" required/>
+          </div>
+        </div>
+        <div class="hijo-edades"><div class="form-container container-full"><div class="form-item item-inline"><label for="hijo-edad-1">Edad hijo 1: <span class="required">*</span></label><input class="hijo-edad-1" name="hijo-edad-1" type="number" placeholder="10" required=""></div></div><div class="form-container container-full"><div class="form-item item-inline"><label for="hijo-edad-2">Edad hijo 2: <span class="required">*</span></label><input class="hijo-edad-2" name="hijo-edad-2" type="number" placeholder="10" required=""></div></div><div class="form-container container-full"><div class="form-item item-inline"><label for="hijo-edad-3">Edad hijo 3: <span class="required">*</span></label><input class="hijo-edad-3" name="hijo-edad-3" type="number" placeholder="10" required=""></div></div><div class="form-container container-full"><div class="form-item item-inline"><label for="hijo-edad-4">Edad hijo 4: <span class="required">*</span></label><input class="hijo-edad-4" name="hijo-edad-4" type="number" placeholder="10" required=""></div></div><div class="form-container container-full"><div class="form-item item-inline"><label for="hijo-edad-5">Edad hijo 5: <span class="required">*</span></label><input class="hijo-edad-5" name="hijo-edad-5" type="number" placeholder="10" required=""></div></div><div class="form-container container-full"><div class="form-item item-inline"><label for="hijo-edad-6">Edad hijo 6: <span class="required">*</span></label><input class="hijo-edad-6" name="hijo-edad-6" type="number" placeholder="10" required=""></div></div></div>
+      </div>
+
+      <input type="button" name="previous" class="previous action-button" value="Anterior" />
+      <input type="button" name="next" class="next action-button" value="Siguiente" />
+    </fieldset>
+
+    <fieldset>
+      <h2 class="fs-title">Postulación a Grupo Paseo</h2>
+      <h3 class="fs-subtitle">Documentos</h3>
+      <h4 class="fs-warning"></h4>
+
+      <div class="form-container container-full">
+        <div class="form-item item-inline item-full">
+          <label for="certificado">¿Posee Certificado de salud vigente? <span class="required">*</span></label>
+          <input class="radio" type="radio" name="certificado" value="si"> Sí
+          <input class="radio" type="radio" name="certificado" value="no" checked> No
+        </div>
+        <div class="form-item item-inline item-full">
+          <label for="cursos">¿Posee Curso de manipulación de alimentos? <span class="required">*</span></label>
+          <input class="radio" type="radio" name="cursos" value="si"> Sí
+          <input class="radio" type="radio" name="cursos" value="no" checked> No
+        </div>
+        <div class="form-item item-inline">
+          <label for="cv">Síntesis Curricular <span class="required">*</span></label>
+          <input type="file" name="cv" id="cv"/>
+        </div>
+      </div>
+      <input type="button" name="previous" class="previous action-button" value="Anterior" />
+      <input type="submit" class="submit action-button" value="Enviar" />
+    </fieldset>
+  </form>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</body>
+</html>

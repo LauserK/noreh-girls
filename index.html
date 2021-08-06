@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>LIST | @larryfest.ve</title>
+  <link rel="stylesheet" href="index.css?v=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">  
+  <meta property="og:title" content="LARRY FEST - LIST" />  
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://sensevzla.com/girls/" />
+  <meta property="og:image" content="http://sensevzla.com/girls/logo.png" />
+  <meta property="og:description" content="Registro para nuestra lista exclusiva, y puedas estar al tanto de nuestros eventos" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PNKFQKKH3M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PNKFQKKH3M');
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+</head>
+<body>
+
+  <div class="logo">
+    <img src="logo.png" alt="Logo LarryFest">
+  </div>
+
+  <section class="pre_postulacion">
+    <h2>Formulario</h2>
+    <p>Los datos identificados con <span class="required">*</span> son totalmente obligatorios.</p>
+    <!--<p>Presentarás un formulario el cual deberá llenar con información real ya que apartir de esa data se hará la evaluación y de quedar postulado el equipo administrativo se contactará con usted para seguir con el siguiente paso mediante los contactos que usted suministre desde el formulario (email y numeros telefónicos).</p>-->
+    <button class="start action-button">Comenzar</button>
+  </section>
+
+  <!-- multistep form -->
+  <form id="msform" class="hide">
+    <ul id="progressbar">
+      <li class="active">Generales</li>      
+    </ul>
+    <fieldset>
+      <h2 class="fs-title">List</h2>
+      <h3 class="fs-subtitle">Datos Generales</h3>
+      <h4 class="fs-warning"></h4>
+      <div class="form-container">
+        <div class="form-item">
+          <label for="nombre">Nombres y Apellidos <span class="required">*</span></label>
+          <input type="text" name="nombre" id="nombre" placeholder="Nombres y Apellidos"  required/>
+        </div>
+        <div class="form-item">
+          <label for="cedula">C.I. <span class="required">*</span></label>
+          <input type="text" name="cedula" id="cedula" placeholder="Ej: V28658985" id="cedula" required/>
+        </div>
+      </div>
+      <div class="form-container">
+        <div class="form-item">
+          <label for="personal">Teléfono personal: <span class="required">*</span></label>
+          <input class="no-number" name="personal" id="telefono" type="number" placeholder="Ej: 04241234567" required/>
+        </div>
+        <div class="form-item">
+          <label for="email">Correo electrónico: <span class="required">*</span></label>
+          <input class="no-number" id="email" name="email" type="email" placeholder="Email" required/>
+        </div>
+      </div>            
+      <hr>
+      <div class="form-container">
+        <div class="form-item">
+          <label for="estado">Estado: <span class="required">*</span></label>
+          <select name="estado" id="estados" required></select>
+        </div>
+        <div class="form-item">
+          <label for="ciudad">Ciudad: <span class="required">*</span></label>
+           <select name="ciudad" id="ciudad" required></select>
+        </div>
+      </div>
+      <div class="form-container">
+        <div class="form-item">
+          <label for="instagram">Usuario de Instagram: <span class="required">*</span></label>
+          <input class="no-number" id="instagram" name="instagram" type="text" placeholder="@usuario" required/>
+        </div>
+        <div class="form-item">
+          <label for="host">Host: <span class="required">*</span></label>
+          <select name="host" id="host" required></select>
+        </div>        
+      </div>                
+      <input type="button" id="submit" name="submit" class="action-button" value="Enviar" />
+    </fieldset>
+  </form>
+
+  <section id="post_postulacion" class="pre_postulacion hide">
+    <h2>¡Su información ha sido enviada exitosamente!</h2>
+    <p>Gracias por conectar con nosotros...</p>
+    <!--<p>El equipo evaluará su postulación y de quedar seleccionado se contactarán con usted mediante correo electrónico y/o llamadas telefónicos durante los próximos días hábiles.</p>-->
+  </section>
+
+  <section class="emoticones">
+    🟡 🔵 🔴        
+  </section>
+
+  <section class="instagram">
+    <i class="fab fa-instagram"></i> larryfest.ve
+  </section>
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="jquery.loading.min.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
