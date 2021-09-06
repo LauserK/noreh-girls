@@ -296,13 +296,8 @@ $(function() {
 	}));
 
 	host_combo.append($('<option>', {
-		value: "Jambene",
-		text : "Jambene"
-	}));
-
-	host_combo.append($('<option>', {
-		value: "Carlos Bejarano",
-		text : "Carlos Bejarano"
+		value: "Noreh",
+		text : "Noreh"
 	}));
 
 	host_combo.append($('<option>', {
