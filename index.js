@@ -303,6 +303,11 @@ $(function() {
 	host_combo.append($('<option>', {
 		value: "David Muci",
 		text : "David Muci"
+	}));
+
+	host_combo.append($('<option>', {
+		value: "Ernesto Isaac",
+		text : "Ernesto Isaac"
 	}));	
 
 	host_combo.append($('<option>', {
